@@ -1,0 +1,22 @@
+CREATE TABLE guides (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    content TEXT NOT NULL,
+    category VARCHAR(100),
+    age_group VARCHAR(50),
+    conditions TEXT[],
+    activity_type VARCHAR(100),
+    difficulty_level VARCHAR(20),
+    estimated_time INTEGER,
+    materials_needed TEXT[],
+    image_url TEXT,
+    video_url TEXT,
+    author VARCHAR(255),
+    is_featured BOOLEAN DEFAULT false,
+    is_published BOOLEAN DEFAULT true,
+    views_count INTEGER DEFAULT 0,
+    likes_count INTEGER DEFAULT 0,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
